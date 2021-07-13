@@ -122,6 +122,13 @@
 										</a>
 									</li>
 									<% if user_signed_in? && current_user&.is_employee?(current_user)%>
+									<li><!-- INTERVENTIONS -->
+										<a id="interventions-nav" href="/intervention">
+											INTERVENTIONS
+										</a>
+									</li>
+									<% end %>
+									<% if user_signed_in? && current_user&.is_employee?(current_user)%>
 									<li><!-- ADMIN -->
 										<a id="admin-nav" href="/admin">
 											ADMIN
