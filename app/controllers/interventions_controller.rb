@@ -3,20 +3,24 @@ class InterventionsController < ApplicationController
 
   # GET /interventions or /interventions.json
   def index
+    redirect_to index_url
     @interventions = Intervention.all
   end
 
   # GET /interventions/1 or /interventions/1.json
   def show
+    redirect_to index_url
   end
 
   # GET /interventions/new
   def new
+    redirect_to index_url
     @intervention = Intervention.new
   end
 
   # GET /interventions/1/edit
   def edit
+    redirect_to index_url
   end
 
   # POST /interventions or /interventions.json
@@ -38,7 +42,7 @@ class InterventionsController < ApplicationController
   def update
     respond_to do |format|
       if @intervention.update(intervention_params)
-        format.html { redirect_to @intervention, notice: "Intervention was successfully updated." }
+        format.html { redirect_to index_url, notice: "Intervention was successfully updated." }
         format.json { render :show, status: :ok, location: @intervention }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,14 +55,50 @@ class InterventionsController < ApplicationController
   def destroy
     @intervention.destroy
     respond_to do |format|
-      format.html { redirect_to interventions_url, notice: "Intervention was successfully destroyed." }
+      format.html { redirect_to index_url, notice: "Intervention was successfully destroyed." }
       format.json { head :no_content }
     end
   end
-
+  def building_select
+    puts "Entered controller"
+    @buildings = Building.where("customer_id = ?", params[:customerID])
+    if request.xhr?
+        respond_to do |format|
+            format.json { render :json => @buildings }
+          end
+      end
+  end
+  def battery_select
+    puts "Entered controller"
+    @batteries = Battery.where("building_id = ?", params[:buildingID])
+    if request.xhr?
+        respond_to do |format|
+            format.json { render :json => @batteries }
+          end
+      end
+  end
+  def column_select
+    puts "Entered controller"
+    @columns = Column.where("battery_id = ?", params[:batteryID])
+    if request.xhr?
+        respond_to do |format|
+            format.json { render :json => @columns }
+          end
+      end
+  end
+  def elevator_select
+    puts "Entered controller"
+    @elevators = Elevator.where("column_id = ?", params[:columnID])
+    if request.xhr?
+        respond_to do |format|
+            format.json { render :json => @elevators }
+          end
+      end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_intervention
+      redirect_to index_url
       @intervention = Intervention.find(params[:id])
     end
 

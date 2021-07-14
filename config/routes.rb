@@ -24,5 +24,13 @@ Rails.application.routes.draw do
 
   post '/watson/greetings', to: 'watson#greetings'
 
+  get 'building_select/:customerID', to: 'interventions#building_select'
+
+  get 'battery_select/:buildingID', to: 'interventions#battery_select'
+
+  get 'column_select/:batteryID', to: 'interventions#column_select'
+
+  get 'elevator_select/:columnID', to: 'interventions#elevator_select'
+
 end
 

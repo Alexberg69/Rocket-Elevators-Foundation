@@ -3,7 +3,7 @@
 	<head>
 		<link rel="icon" type="image/png" href="<%= asset_path('faviconlogo.png') %>" />
 		<meta charset="utf-8" />
-		<title>Quote Page-Rocket Elevators</title>
+		<title>Interventions Form-Rocket Elevators</title>
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
@@ -191,44 +191,46 @@
 					.shadow-after-3 	= shadow 3 header bottom
 			-->
 			<!-- /PAGE HEADER -->
-
+			<div >
+			<h1 style="text-align:center">Interventions Form<h1>
+			</div>
 			<!-- Form Section -->
   <%= form_for :intervention, url: url_for(controller: 'interventions', action: 'create'),  :html => {id: "interventionSubmit", :class => "text-center"} do |form|%>
  
 
   <div class="field" style="display: none;">
     <%= form.label :author %>
-    <%= form.text_field :author, value:current_user.employee.id%>
+    <%= form.text_field :author, value:current_user.employee.id %>
   </div>
 
   <div class="field" >
     <%= form.label(:customerID, "Select a Customer") %>
-    <%= form.select :customerID, Customer.all.collect {|p| [p.compagny_name, p.id]}, :required %>
+    <%= form.select :customerID, Customer.all.collect {|c| [c.compagny_name, c.id]}, :include_blank => "", :required => 'required' %>
   </div>
 
-  <div class="field">
+  <div class="field" id="buildingDiv">
     <%= form.label(:buildingID, "Select a Building") %>
-    <%= form.select :buildingID, Building.all.collect {|p| [p.address_of_the_building.city, p.id]}, :required %>
+    <%= form.select :buildingID, Building.all.collect {|b| [b.id, b.id]}, {include_blank: true}, :required => 'required' %>
   </div>
 
-  <div class="field">
+  <div class="field" id="batteryDiv">
     <%= form.label(:batteryID, "Select a Battery if applicable") %>
-    <%= form.text_field :batteryID %>
+    <%= form.select :batteryID, Battery.all.collect {|p| [p.id, p.id]}, {include_blank: true} %>
   </div>
 
-  <div class="field">
+  <div class="field" id="columnDiv">
     <%= form.label(:columnID, "Select a Column if applicable") %>
-    <%= form.text_field :columnID %>
+    <%= form.select :columnID, Column.all.collect {|p| [p.id, p.id]}, {include_blank: true} %>
   </div>
 
-  <div class="field">
+  <div class="field" id="elevatorDiv">
     <%= form.label(:elevatorID, "Select an Elevator if applicable") %>
-    <%= form.text_field :elevatorID %>
+    <%= form.select :elevatorID, Elevator.all.collect {|p| [p.id, p.id]}, {include_blank: true} %>
   </div>
 
   <div class="field">
     <%= form.label(:employeeID, "Select an Employee") %>
-    <%= form.select :employeeID, Employee.all.collect {|e| [e.first_name, e.id]} %>
+    <%= form.select :employeeID, Employee.all.collect {|e| [e.first_name + " " + e.last_name, e.id]}, :include_blank => "None" %>
   </div>
 
   <div class="field" style="display: none;">
@@ -248,7 +250,7 @@
 
   <div class="field">
     <%= form.label(:report, "Description") %>
-    <%= form.text_field :report %>
+    <%= form.text_area :report, rows: "10" , cols: "80", :required => 'required' %>
   </div>
 
   <div class="field" style="display: none;">
@@ -257,7 +259,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-danger', value:"Submit"%>
   </div>
 <% end %>
 
