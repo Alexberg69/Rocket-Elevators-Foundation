@@ -7,6 +7,9 @@ body {
   line-height: 18px;
 }
 
+h2 {
+  text-align: center;
+}
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -21,7 +24,7 @@ pre {
 
 a {
   color: #000;
-
+  
   &:visited {
     color: #666;
   }
@@ -51,11 +54,10 @@ div {
 }
 
 .field_with_errors {
-  padding: 2px;
+  padding: 10px;
   background-color: lightblue;
   display: table;
   margin: auto;
-  
 }
 
 #error_explanation {
@@ -84,4 +86,7 @@ div {
 
 label {
   display: block;
+}
+.text-center{
+  text-align:center;
 }

@@ -43,7 +43,7 @@ $("#intervention_customerID").change(function(){
 	      	console.log(response);
 	      	var tasks = response;
 	      	$("#intervention_buildingID").empty();
-            $("#intervention_buildingID").append('<option></option>');
+            $("#intervention_buildingID").append('<option value="">None</option>');
 	      	for(var i = 0; i < tasks.length; i++){
 	      		$("#intervention_buildingID").append('<option value="' + tasks[i]["id"] + '">' + tasks[i]["id"] + '</option>');
                   console.log(tasks.length);
@@ -83,7 +83,7 @@ $("#intervention_buildingID").change(function(){
 	      	console.log(response);
 	      	var tasks = response;
 	      	$("#intervention_batteryID").empty();
-            $("#intervention_batteryID").append('<option></option>');
+            $("#intervention_batteryID").append('<option value="">None</option>');
 	      	for(var i = 0; i < tasks.length; i++){
 	      		$("#intervention_batteryID").append('<option value="' + tasks[i]["id"] + '">' + tasks[i]["id"] + '</option>');
                   console.log(tasks.length);
@@ -119,7 +119,7 @@ $("#intervention_batteryID").change(function(){
 	      	console.log(response);
 	      	var tasks = response;
 	      	$("#intervention_columnID").empty();
-            $("#intervention_columnID").append('<option>None</option>');
+            $("#intervention_columnID").append('<option value="">None</option>');
 	      	for(var i = 0; i < tasks.length; i++){
 	      		$("#intervention_columnID").append('<option value="' + tasks[i]["id"] + '">' + tasks[i]["id"] + '</option>');
                   console.log(tasks.length);
@@ -151,7 +151,7 @@ $("#intervention_columnID").change(function(){
 	      	console.log(response);
 	      	var tasks = response;
 	      	$("#intervention_elevatorID").empty();
-            $("#intervention_elevatorID").append('<option>None</option>');
+            $("#intervention_elevatorID").append('<option value="">None</option>');
 	      	for(var i = 0; i < tasks.length; i++){
 	      		$("#intervention_elevatorID").append('<option value="' + tasks[i]["id"] + '">' + tasks[i]["id"] + '</option>');
                   console.log(tasks.length);
@@ -161,3 +161,10 @@ $("#intervention_columnID").change(function(){
   		});
 	}
 });
+
+$("textarea").each(function () {
+	this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+  }).on("input", function () {
+	this.style.height = "auto";
+	this.style.height = (this.scrollHeight) + "px";
+  });

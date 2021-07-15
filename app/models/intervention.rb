@@ -53,8 +53,25 @@ class Intervention < ApplicationRecord
         firstname = Employee.find("#{author}").first_name
         lastname = Employee.find("#{author}").last_name
         customer = Customer.find("#{customerID}").compagny_name
-        firstname1 = Employee.find("#{employeeID}").first_name
-        lastname1 = Employee.find("#{employeeID}").last_name
+        if employeeID == nil
+            firstname1 = "None"
+            lastname1 = ""
+        else
+            firstname1 = Employee.find("#{employeeID}").first_name
+            lastname1 = Employee.find("#{employeeID}").last_name
+        end
+        if buildingID == nil
+            buildingID = "None"
+        end
+        if batteryID == nil
+            batteryID = "None"
+        end
+        if columnID == nil
+            columnID = "None"
+        end
+        if elevatorID == nil
+            elevatorID = "None"
+        end
 
         puts "This is the client after creation #{client}"
         client.tickets.create(
@@ -66,7 +83,7 @@ class Intervention < ApplicationRecord
             Battery ID (if applicable): #{batteryID}
             Column ID (if applicable): #{columnID}
             Elevator ID (if applicable): #{elevatorID}
-            Employee assigned to the task: #{firstname1} #{lastname1}
+            Employee assigned to the task (if applicable): #{firstname1} #{lastname1}
             Description of the request: #{report}" }, 
             :submitter_id => client.current_user.id, 
             :type => "problem",

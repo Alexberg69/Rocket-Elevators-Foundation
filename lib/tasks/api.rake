@@ -1,7 +1,7 @@
 require 'pg'
 
-con = PG::Connection.open(host: 'codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com', port: 5432, user: 'codeboxx', dbname:'AlexandreLanglois', password:'Codeboxx1!')
-
+con = PG::Connection.open(host: 'codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com', port: 5432, user: 'codeboxx', dbname:'AlexBergeronDWH', password:'Codeboxx1!')
+# con = PG::Connection.open(host: '127.0.0.1', port: 5432, user: 'bromedy', dbname: 'bromedy', password: 'bromedy')
 random_status = ["Pending", "InProgress", "Interrupted", "Resumed", "Complete"]
 random_result = ["Success", "Failure", "Incomplete"]
 random_id = [41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53]
