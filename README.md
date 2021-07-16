@@ -35,3 +35,31 @@ NOTE-- It seems that the script for the button takes some time to execute the co
 
 Zendesk:
 When a customer sends a contact form or a quote, the Zendesk API is triggered and a new ticket is created on the behalf of the customer. This ticket contains the customer's contact information and provides an easy way for the Rocket Elevators support team to respond to customers and follow up on requests.
+
+
+Week 8 - Consolidation
+
+Employees who are logged in can now fill out a form to request an intervention on a customer's building by clicking on the "Interventions" tab located in the navigation bar. This form will send the datas to the server once submitted and will create a ticket on Zendesk.
+
+Zendesk:
+A new account has been created, contact and quote form will still create tickets when submitted. Interventions requests will create a "Problem" type ticket when submitted and it can be accessible with these informations:
+Domain => schooltrial.zendesk.com
+password => Codeboxx1!
+email: letmeusetrialplease@hotmail.com
+
+RESTAPI:
+Three new endpoints have been added to the REST API from last week. They can be accessible on this repo => https://github.com/Alexberg69/Rocket_Elevators_REST_API.git
+Ask me access if you need it.
+
+Here's the postman collection => https://www.getpostman.com/collections/bd56bd3e3e9dfd45c07b
+
+The new end points are:
+
+10-Returns all fields of all intervention Request records that do not have a start date and are in "Pending" status.
+https://rocketelevatorrestapi.azurewebsites.net/api/interventions
+
+11-Change the status of the intervention request to "InProgress" and add a start date and time (Timestamp).
+https://rocketelevatorrestapi.azurewebsites.net/api/interventions/1/InProgress
+
+12-Change the status of the request for action to "Completed" and add an end date and time (Timestamp).
+https://rocketelevatorrestapi.azurewebsites.net/api/interventions/1/Completed
