@@ -60,18 +60,6 @@ class Intervention < ApplicationRecord
             firstname1 = Employee.find("#{employeeID}").first_name
             lastname1 = Employee.find("#{employeeID}").last_name
         end
-        if buildingID == nil
-            buildingID = "None"
-        end
-        if batteryID == nil
-            batteryID = "None"
-        end
-        if columnID == nil
-            columnID = "None"
-        end
-        if elevatorID == nil
-            elevatorID = "None"
-        end
 
         puts "This is the client after creation #{client}"
         client.tickets.create(

@@ -205,7 +205,7 @@
 
   <div class="field" >
     <%= form.label(:customerID, "Select a Customer") %>
-    <%= form.select :customerID, Customer.all.collect {|c| [c.compagny_name, c.id]}, :include_blank => "", :required => true,  :class => "col-md-2 text-center" %>
+    <%= form.select :customerID, Customer.all.collect {|c| [c.compagny_name, c.id]}, {include_blank: true}, :required => true,  :class => "col-md-2 text-center" %>
   </div>
 
   <div class="field" id="buildingDiv">
@@ -215,22 +215,22 @@
 
   <div class="field" id="batteryDiv">
     <%= form.label(:batteryID, "Select a Battery if applicable") %>
-    <%= form.select :batteryID, Battery.all.collect {|p| [p.id, p.id]}, {include_blank: true}, :class => "col-md-2" %>
+    <%= form.select :batteryID, Battery.all.collect {|p| [p.id, p.id]}, {include_blank: true}, :class => "col-md-2 text-center" %>
   </div>
 
   <div class="field" id="columnDiv">
     <%= form.label(:columnID, "Select a Column if applicable") %>
-    <%= form.select :columnID, Column.all.collect {|p| [p.id, p.id]}, {include_blank: true}, :class => "col-md-2" %>
+    <%= form.select :columnID, Column.all.collect {|p| [p.id, p.id]}, {include_blank: true}, :class => "col-md-2 text-center" %>
   </div>
 
   <div class="field" id="elevatorDiv">
     <%= form.label(:elevatorID, "Select an Elevator if applicable") %>
-    <%= form.select :elevatorID, Elevator.all.collect {|p| [p.id, p.id]}, {include_blank: true},  :class => "col-md-2" %>
+    <%= form.select :elevatorID, Elevator.all.collect {|p| [p.id, p.id]}, {include_blank: true},  :class => "col-md-2 text-center" %>
   </div>
 
   <div class="field">
     <%= form.label(:employeeID, "Select an Employee") %>
-    <%= form.select :employeeID, Employee.all.collect {|e| [e.first_name + " " + e.last_name, e.id]}, {include_blank: "None"},  :class => "col-md-2" %>
+    <%= form.select :employeeID, Employee.all.collect {|e| [e.first_name + " " + e.last_name, e.id]}, {include_blank: "None"},  :class => "col-md-2 text-center" %>
   </div>
 
   <div class="field" style="display: none;">
