@@ -6,10 +6,10 @@ class Quote < ApplicationRecord
         client = ZendeskAPI::Client.new do |config|
             # Mandatory:
           
-            config.url = "https://schooltrial.zendesk.com/api/v2" # e.g. https://rocketelevator8148.zendesk.com/api/v2
+            config.url = "https://schooltest.zendesk.com/api/v2" # e.g. https://rocketelevator8148.zendesk.com/api/v2
           
             # Basic / Token Authentication
-            config.username = "letmeusetrialplease@hotmail.com"
+            config.username = "dontcanceltrial@hotmail.com"
             
           
             # Choose one of the following depending on your authentication choice

@@ -1,4 +1,4 @@
-Week 8 - Life is a Web Service
+Week 7 - Life is a Web Service
 
 During this week we used the following APIs in our website:
 -Google Maps
@@ -37,15 +37,15 @@ Zendesk:
 When a customer sends a contact form or a quote, the Zendesk API is triggered and a new ticket is created on the behalf of the customer. This ticket contains the customer's contact information and provides an easy way for the Rocket Elevators support team to respond to customers and follow up on requests.
 
 
-Week 9 - Consolidation
+Week 8 - Consolidation
 
 Employees who are logged in can now fill out a form to request an intervention on a customer's building by clicking on the "Interventions" tab located in the navigation bar. This form will send the datas to the server once submitted and will create a ticket on Zendesk.
 
 Zendesk:
 A new account has been created, contact and quote form will still create tickets when submitted. Interventions requests will create a "Problem" type ticket when submitted and it can be accessible with these informations:
-Domain => schooltrial.zendesk.com
+Domain => schooltest.zendesk.com
 password => Codeboxx1!
-email: letmeusetrialplease@hotmail.com
+email: dontcanceltrial@hotmail.com
 
 RESTAPI:
 Three new endpoints have been added to the REST API from last week. They can be accessible on this repo => https://github.com/Alexberg69/Rocket_Elevators_REST_API.git
