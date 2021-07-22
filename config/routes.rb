@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get '/intervention', to: 'website#intervention'
 
+  get '/trivia', to: 'website#trivia'
+
   get '/google', to: 'google#maps'
 
   post '/watson/greetings', to: 'watson#greetings'
