@@ -63,3 +63,10 @@ https://rocketelevatorrestapi.azurewebsites.net/api/interventions/1/InProgress
 
 12-Change the status of the request for action to "Completed" and add an end date and time (Timestamp).
 https://rocketelevatorrestapi.azurewebsites.net/api/interventions/1/Completed
+
+Week 10 Quality and TDD / Security
+
+This week, we created a module called ElevatorMedia using the test-driven-development method. It is located in 'lib' folder and the tests are in the 'spec' folder. I created a view for the render of the module which can only be accessed via the url by adding '/trivia'.
+I also tried making the same test using javascript and jest which are located on this repo: https://github.com/Alexberg69/TDD-JEST.git
+
+For the Security part, I created a google Docs and here is the url to read it: https://docs.google.com/document/d/1Yu-dgpl7-ZYzESD9C3rJb7ZkmgjShDqqruxuC_mNkwU/edit?usp=sharing
