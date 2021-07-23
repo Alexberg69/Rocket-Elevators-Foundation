@@ -3,20 +3,24 @@ class QuotesController < ApplicationController
 
   # GET /quotes or /quotes.json
   def index
+    redirect_to index_url
     @quotes = Quote.all
   end
 
   # GET /quotes/1 or /quotes/1.json
   def show
+    redirect_to index_url
   end
 
   # GET /quotes/new
   def new
+    redirect_to index_url
     @quote = Quote.new
   end
 
   # GET /quotes/1/edit
   def edit
+    redirect_to index_url
   end
 
   # POST /quotes or /quotes.json
@@ -38,7 +42,7 @@ class QuotesController < ApplicationController
   def update
     respond_to do |format|
       if @quote.update(quote_params)
-        format.html { redirect_to @quote, notice: "Quote was successfully updated." }
+        format.html { redirect_to index_url, notice: "Quote was successfully updated." }
         format.json { render :show, status: :ok, location: @quote }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +55,7 @@ class QuotesController < ApplicationController
   def destroy
     @quote.destroy
     respond_to do |format|
-      format.html { redirect_to quotes_url, notice: "Quote was successfully destroyed." }
+      format.html { redirect_to index_url, notice: "Quote was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -59,6 +63,7 @@ class QuotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quote
+      redirect_to index_url
       @quote = Quote.find(params[:id])
     end
 

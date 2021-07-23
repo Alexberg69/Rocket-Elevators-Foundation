@@ -3,20 +3,24 @@ class LeadsController < ApplicationController
 
   # GET /leads or /leads.json
   def index
+    redirect_to index_url
     @leads = Lead.all
   end
 
   # GET /leads/1 or /leads/1.json
   def show
+    redirect_to index_url
   end
 
   # GET /leads/new
   def new
+    redirect_to index_url
     @lead = Lead.new
   end
 
   # GET /leads/1/edit
   def edit
+    redirect_to index_url
   end
 
   # POST /leads or /leads.json
@@ -39,7 +43,7 @@ class LeadsController < ApplicationController
   def update
     respond_to do |format|
       if @lead.update(lead_params)
-        format.html { redirect_to @lead, notice: "Lead was successfully updated." }
+        format.html { redirect_to index_url, notice: "Lead was successfully updated." }
         format.json { render :show, status: :ok, location: @lead }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +56,7 @@ class LeadsController < ApplicationController
   def destroy
     @lead.destroy
     respond_to do |format|
-      format.html { redirect_to leads_url, notice: "Lead was successfully destroyed." }
+      format.html { redirect_to index_url, notice: "Lead was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -60,6 +64,7 @@ class LeadsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lead
+      redirect_to index_url
       @lead = Lead.find(params[:id])
     end
 

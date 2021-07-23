@@ -1133,15 +1133,15 @@
 									<div class="row">
 											<div class="col-md-4">
 												<%= f.label :full_name, "Full Name *" %>
-    											<%= f.text_field :full_name %>
+    											<%= f.text_field :full_name, autocomplete: "off"%>
 											</div>
 											<div class="col-md-4">
 												<%= f.label :email, "E-mail Address *" %>
-    											<%= f.email_field :email %>
+    											<%= f.email_field :email, autocomplete: "off" %>
 											</div>
 											<div class="col-md-4">
 												<%= f.label :phone_number, "Phone Number *" %>
-    											<%= f.phone_field :phone_number %>
+    											<%= f.phone_field :phone_number, autocomplete: "off" %>
 											</div>
 
 
@@ -1149,16 +1149,16 @@
 									<div class="row">
 											<div class="col-md-4">
 												<%= f.label :company_name, "Company name" %>
-    											<%= f.text_field :company_name %>
+    											<%= f.text_field :company_name, autocomplete: "off" %>
 											</div>
 									    	<div class="col-md-4">
 												<%= f.label :project_name, "Project Name" %>
-    											<%= f.text_field :project_name %>
+    											<%= f.text_field :project_name, autocomplete: "off" %>
 
 											</div>
 											<div class="col-md-4">
 												<%= f.label :project_description, "Project Description" %>
-    											<%= f.text_field :project_description %>
+    											<%= f.text_field :project_description, autocomplete: "off" %>
 											</div>
 									</div>
 									<div class="row">
