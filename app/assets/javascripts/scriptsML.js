@@ -8,7 +8,7 @@ import { AudioInputStream, AudioConfig, VoiceProfileType, SpeakerRecognizer, Res
 import { createReadStream } from "fs";
 
 // Note: Change the locale if desired.
-const profile_locale = "en-us";
+const profile_locale = "en-us"; 
 
 /* Note: passphrase_files and verify_file should contain paths to audio files that contain \"My voice is my passport, verify me.\"
 You can obtain these files from:
