@@ -197,7 +197,7 @@
         <tr>
             <td align="right">Enrollment File</td>
             <td>
-            <input type="file" id="filePicker" accept=".wav" />
+            <input type="file" id="filePicker" accept="" />
             </td>
         </tr>
         <tr>
@@ -212,7 +212,7 @@
         </tr>
 		<tr>
             <td></td>
-            <td><button id="enrollmentButton">Create Voice Profile</button></td>
+            <td><button id="enrollmentButton">Create Enrollment</button></td>
         </tr>
         <tr>
             <td></td>
@@ -264,17 +264,19 @@
 	//Enrollment
 	enrollmentButton.addEventListener("click", function () {
 		$(function() {
-			var fileInput = document.getElementById('filePicker');
-			var file = fileInput.files[0];
+			var fileUpload = $("#filePicker")[0];
+			var file = fileUpload.files[0];
 			var formData = new FormData();
-			formData.append('file', file);
+			
+            formData.append('file', file);
+	
 			var params = {
 				// Request parameters
 				"shortAudio": true,
 			};
 		
 			$.ajax({
-				url: "https://westus.api.cognitive.microsoft.com/spid/v1.0/identificationProfiles/d65f155c-5c44-4258-8e18-4ba0fe9278d4/enroll?" + $.param(params),
+				url: "https://westus.api.cognitive.microsoft.com/spid/v1.0/identificationProfiles/b1c80602-7209-4df7-ab0f-194513764f7a/enroll?" + $.param(params),
 				beforeSend: function(xhrObj){
 					// Request headers
 					xhrObj.setRequestHeader("Content-Type","multipart/form-data");
@@ -283,7 +285,8 @@
 				type: "POST",
 				// Request body
 				data: formData,
-				processData: false
+				processData: false,
+				contentType: false,
 			})
 			.done(function(data) {
 				alert("success");
