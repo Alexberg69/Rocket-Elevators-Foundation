@@ -1,14 +1,13 @@
-import 'microsoft-cognitiveservices-speech-sdk';
 "use strict";
 
 /* To run this sample, install:
 npm install microsoft-cognitiveservices-speech-sdk
 */
-import { AudioInputStream, AudioConfig, VoiceProfileType, SpeakerRecognizer, ResultReason, VoiceProfileEnrollmentCancellationDetails, SpeakerVerificationModel, SpeakerIdentificationModel, SpeechConfig, VoiceProfileClient } from "microsoft-cognitiveservices-speech-sdk";
-import { createReadStream } from "fs";
+var sdk = require("microsoft-cognitiveservices-speech-sdk");
+var fs = require("fs");
 
 // Note: Change the locale if desired.
-const profile_locale = "en-us"; 
+const profile_locale = "en-us";
 
 /* Note: passphrase_files and verify_file should contain paths to audio files that contain \"My voice is my passport, verify me.\"
 You can obtain these files from:
@@ -22,16 +21,16 @@ https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/fa6428a08377
 const identify_file = "aboutSpeechSdk.wav";
 
 const key_var = ENV['ML_KEY'];
-if (!process.env[key_var]) {
+if (!key_var) {
     throw new Error('please set/export the following environment variable: ' + key_var);
 }
-var subscription_key = process.env[key_var];
+var subscription_key = key_var;
 
 const region_var = ENV['ML_REGION'];
-if (!process.env[region_var]) {
+if (!region_var) {
     throw new Error('please set/export the following environment variable: ' + region_var);
 }
-var region = process.env[region_var];
+var region = region_var;
 
 const ticks_per_second = 10000000;
 
