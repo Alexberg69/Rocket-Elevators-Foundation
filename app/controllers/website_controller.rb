@@ -13,4 +13,6 @@ class WebsiteController < ApplicationController
   end
   def trivia
   end
+  def machineLearning
+  end
 end

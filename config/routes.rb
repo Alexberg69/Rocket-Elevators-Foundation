@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get '/trivia', to: 'website#trivia'
 
+  get '/machineLearning', to: 'website#machineLearning'
+
   get '/google', to: 'google#maps'
 
   post '/watson/greetings', to: 'watson#greetings'
