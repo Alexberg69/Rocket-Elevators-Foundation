@@ -70,3 +70,9 @@ This week, we created a module called ElevatorMedia using the test-driven-develo
 I also tried making the same test using javascript and jest which are located on this repo: https://github.com/Alexberg69/TDD-JEST.git
 
 For the Security part, I created a google Docs and here is the url to read it: https://docs.google.com/document/d/1Yu-dgpl7-ZYzESD9C3rJb7ZkmgjShDqqruxuC_mNkwU/edit?usp=sharing
+
+Week 13 Machine Learning
+
+This week, we implemented the code to be able to create a profile with an audio on the Azure Speech Recognition API and be able to verify if the speaker in this profile is present in another audio.
+
+All the audio used are present in the audio folder and the form is in the machineLearning page located in app/view/website
