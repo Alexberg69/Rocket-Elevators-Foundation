@@ -98,3 +98,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.1.0'
 end
 
+gem 'newrelic_rpm'
+
+gem 'newrelic-infinite_tracing'
